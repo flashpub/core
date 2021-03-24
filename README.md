@@ -1,0 +1,2 @@
+# core
+flashpub's core
