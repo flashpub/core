@@ -1,0 +1,60 @@
+{
+  "name": "flashpub-core",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.json --max-warnings 0",
+    "fix": "eslint . --ext .ts,.tsx,.js,.jsx,.json --fix & yarn prettier",
+    "prettier": "prettier --config .prettierrc '**/*.{json,js,jsx,ts,tsx,css,scss,md}' --write"
+  },
+  "dependencies": {
+    "@nandorojo/swr-firestore": "^0.16.0",
+    "@zeit/next-sass": "^1.0.1",
+    "firebase": "^8.3.1",
+    "next": "^10.0.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "valtio": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@types/jest": "^26.0.21",
+    "@types/node": "^14.14.35",
+    "@types/react": "^17.0.3",
+    "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "babel-jest": "^26.6.3",
+    "bulma": "^0.9.2",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^5.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-watch-typeahead": "^0.6.1",
+    "lint-staged": "^10.5.4",
+    "node-sass": "^5.0.0",
+    "prettier": "^2.2.1",
+    "react-test-renderer": "^17.0.2",
+    "redux-devtools-extension": "^2.13.9",
+    "typescript": "^4.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{json,js,jsx,ts,tsx,css,scss,md}": "prettier --config .prettierrc --write",
+    "*.{ts,tsx,js,jsx,json}": "eslint --cache --max-warnings 0"
+  }
+}
